@@ -1,0 +1,31 @@
+Group: 线程�?
+  time: 20170815T181504+0800 - 20170815T181504+0800
+  total duration:       1
+  requests:             5
+  requests per second:  5
+  response duration (ms)
+    min:                698
+    average:            1021
+    max:                1246
+    standard deviation: 212
+    quantiles (ms)
+         10%        0
+         20%      698
+         30%      698
+         40%      864
+         50%      864
+         60%     1068
+         70%     1068
+         80%     1231
+         90%     1231
+         99%     1231
+       99.9%     1231
+      100.0%     1246 (max. value)
+  response size (bytes)
+    total:              14215
+    min:                2843
+    average:            2843
+    max:                2843
+    standard deviation: 0
+  response status codes
+    200:                   5 (100%)

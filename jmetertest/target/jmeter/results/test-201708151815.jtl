@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="864" lt="864" ts="1502792104107" s="true" lb="HTTP请求" rc="200" rm="OK" tn="线程组 1-4" dt="text" by="2843">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1068" lt="1067" ts="1502792103906" s="true" lb="HTTP请求" rc="200" rm="OK" tn="线程组 1-3" dt="text" by="2843">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1231" lt="1231" ts="1502792103740" s="true" lb="HTTP请求" rc="200" rm="OK" tn="线程组 1-2" dt="text" by="2843">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="1246" lt="1246" ts="1502792103740" s="true" lb="HTTP请求" rc="200" rm="OK" tn="线程组 1-1" dt="text" by="2843">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<httpSample t="698" lt="698" ts="1502792104306" s="true" lb="HTTP请求" rc="200" rm="OK" tn="线程组 1-5" dt="text" by="2843">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+
+</testResults>

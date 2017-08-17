@@ -1,0 +1,20 @@
+{
+  "performanceData":
+  [
+    {
+      "min": 698,
+      "max": 1246,
+      "quantile90": 1231,
+      "average": 1021,
+      "total": 5,
+      "statusCodes":{
+                      "200": 5
+                    },
+      "uriByStatusCode":{
+                          "200": [
+                                  "HTTP请求"
+                                 ]
+                        }
+    }
+  ]
+}

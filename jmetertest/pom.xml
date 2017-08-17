@@ -1,0 +1,132 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jmeter.ci</groupId>
+	<artifactId>jmetertest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<!-- <dependencyManagement> -->
+	<dependencies>
+		<dependency>
+			<groupId>kg.apc</groupId>
+			<artifactId>jmeter-plugins-casutg</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>kg.apc</groupId>
+			<artifactId>jmeter-plugins-graphs-basic</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>kg.apc</groupId>
+			<artifactId>jmeter-plugins-graphs-additional</artifactId>
+			<version>2.0</version>
+		</dependency>
+	</dependencies>
+	<!-- </dependencyManagement> -->
+
+
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.8</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includeArtifactIds>jmeter-plugins-casutg,jmeter-plugins-graphs-basic,jmeter-plugins-graphs-additional</includeArtifactIds>
+					<outputDirectory>target/jmeter/lib/ext</outputDirectory>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>com.lazerycode.jmeter</groupId>
+				<artifactId>jmeter-maven-plugin</artifactId>
+				<version>1.9.0</version>
+				<executions>
+					<execution>
+						<id>jmeter-tests</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jmeter</goal>
+							<!-- <goal>copy</goal> -->
+						</goals>
+					</execution>
+				</executions>
+
+				<configuration>
+					<appendResultsTimestamp>true</appendResultsTimestamp>
+					<resultsFileNameDateFormat>yyyyMMddHHmm</resultsFileNameDateFormat>
+
+				</configuration>
+
+			</plugin>
+
+			<plugin>
+				<groupId>com.lazerycode.jmeter</groupId>
+				<artifactId>jmeter-analysis-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>analyze</goal>
+						</goals>
+						<configuration>
+							<source>${project.build.directory}/**/*.jtl</source>
+							<targetDirectory>${project.build.directory}/results</targetDirectory>
+							<processAllFilesFound>true</processAllFilesFound>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-dependency-plugin
+										</artifactId>
+										<versionRange>
+											[2.8,)
+										</versionRange>
+										<goals>
+											<goal>
+												copy-dependencies
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

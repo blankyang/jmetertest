@@ -1,0 +1,2 @@
+uri;count;total;min;average;max;standarddeviation;persecond;errors
+"HTTP请求";5;1283;50;256;528;155;0;0
