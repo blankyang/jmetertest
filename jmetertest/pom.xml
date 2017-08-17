@@ -9,6 +9,11 @@
 	<!-- <dependencyManagement> -->
 	<dependencies>
 		<dependency>
+			<groupId>com.lazerycode.jmeter</groupId>
+			<artifactId>jmeter-analysis-maven-plugin</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+		<dependency>
 			<groupId>kg.apc</groupId>
 			<artifactId>jmeter-plugins-casutg</artifactId>
 			<version>2.1</version>
@@ -86,6 +91,7 @@
 							<source>${project.build.directory}/**/*.jtl</source>
 							<targetDirectory>${project.build.directory}/results</targetDirectory>
 							<processAllFilesFound>true</processAllFilesFound>
+							<generateCharts>true</generateCharts>
 						</configuration>
 					</execution>
 				</executions>
@@ -93,7 +99,8 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
